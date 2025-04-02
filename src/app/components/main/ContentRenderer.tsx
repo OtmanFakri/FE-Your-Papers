@@ -2,7 +2,6 @@ import React from 'react';
 import PlaceholderInput from './PlaceholderInput';
 import {useAtom} from "jotai";
 import {eselectedSizeAtom} from "@/app/atom/atom";
-import accommodationCommitmentHtml from "@/utils/test_jtml";
 
 interface ContentRendererProps {
     content: string;

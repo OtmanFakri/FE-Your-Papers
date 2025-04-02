@@ -14,9 +14,9 @@ export default function Sidebar() {
     const [categories, setCategories] = useState<Category[]>([]);
     const [documents, setDocuments] = useState<Document[]>([]);
     const [selectedContent, setSelectedContent] = useState<string | null>(null);
-    const [page, setPage] = useState<number>(1);
+    const [page, ] = useState<number>(1);
     const [loading, setLoading] = useState<boolean>(false);
-    const [error, setError] = useState<string | null>(null);
+    const [, setError] = useState<string | null>(null);
     const [selectedCategoryId, setSelectedCategoryId] = useState<number | undefined>(undefined);
     const [selectedDocumentId, setSelectedDocumentId] = useState<number | undefined>(undefined);
 
@@ -29,13 +29,13 @@ export default function Sidebar() {
                 const data = await getCategories({page});
                 setCategories(data);
             } catch (err) {
-                setError('Failed to load categories');
+                setError(`Failed to load categories ${err}`);
             } finally {
                 setLoading(false);
             }
         };
         fetchCategories();
-    }, []);
+    }, [page]);
 
 
     const handleDocumentClick = async (documentId: number) => {
@@ -62,7 +62,7 @@ export default function Sidebar() {
             setSelectedContent(null);
         } catch (err) {
             setDocuments([]);
-            setError('Failed to load documents');
+            setError(`Failed to load documents ${err}`);
         } finally {
             setLoading(false);
         }

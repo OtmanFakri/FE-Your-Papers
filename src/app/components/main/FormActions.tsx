@@ -97,7 +97,7 @@ function FormActions({onSubmit}: FormActionsProps) {
                 className={"flex items-center justify-center bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 w-12"}>
                 <ArrowDownIcon
                     className="h-6 w-6 text-gray-500 cursor-pointer hover:text-gray-700"
-                    // onClick={onSubmit}
+                    onClick={onSubmit}
                 />
             </div>
         </div>
