@@ -17,7 +17,7 @@ function ContentRenderer({content, inputValues, onInputChange}: ContentRendererP
         let inputCounter = 0;
 
         return parts.map((part, index) => {
-            if (index === parts.length - 1) return <span key={index} dangerouslySetInnerHTML={{__html: part}}/>;
+            if (index === parts.length - 1) return <span key={index}>{part}</span>;
 
             inputCounter++;
             const inputId = `input-${inputCounter}`;
@@ -25,7 +25,7 @@ function ContentRenderer({content, inputValues, onInputChange}: ContentRendererP
 
             return (
                 <React.Fragment key={index}>
-                    <span dangerouslySetInnerHTML={{__html: part}}/>
+                    <span>{part}</span>
                     <PlaceholderInput
                         inputId={inputId}
                         value={value}
@@ -36,7 +36,9 @@ function ContentRenderer({content, inputValues, onInputChange}: ContentRendererP
         });
     };
 
-    return <div className={`A4-page font-custom-font3 m-8  text-justify ${selectedSize.fontSize} tracking-widest leading-loose`} dir="rtl">
+    return <div
+        className={`A4-page font-custom-font3 m-8  whitespace-pre-line text-justify ${selectedSize.fontSize} tracking-widest leading-loose`}
+        dir="rtl">
         {/*{accommodationCommitmentHtml}  FOR TEST*/}
         {renderContent()}
     </div>;

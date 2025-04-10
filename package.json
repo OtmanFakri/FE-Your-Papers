@@ -14,12 +14,16 @@
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.49.4",
     "axios": "^1.8.4",
+    "class-variance-authority": "^0.7.1",
+    "framer-motion": "^12.6.3",
     "jotai": "^2.12.2",
+    "lucide-react": "^0.487.0",
     "netlify": "^13.3.4",
     "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "supabase": "^2.20.5"
+    "supabase": "^2.20.5",
+    "tailwind-merge": "^3.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
