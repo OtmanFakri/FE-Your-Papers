@@ -52,14 +52,8 @@ const Page = () => {
         setFilteredDocuments(filtered);
     }, [selectedCategory, searchTerm]);
 
-    const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const categoryId = parseInt(e.target.value);
-        if (isNaN(categoryId)) {
-            setSelectedCategory(null);
-        } else {
-            const category = categories.find((cat) => cat.id === categoryId) || null;
-            setSelectedCategory(category);
-        }
+    const handleCategoryChange = (item: Item) => {
+        setSelectedCategory(item);
     };
 
     const handleReset = () => {
