@@ -1,5 +1,8 @@
+'use client'
+
 import React from "react";
 import {Button} from "@/app/components/landingPgae/ui/button";
+import {Link} from 'react-scroll';
 
 export const HeaderSection = () => {
     const navItems = [
@@ -32,13 +35,14 @@ export const HeaderSection = () => {
                     {/* Navigation Links */}
                     <nav className="flex items-center gap-8">
                         {navItems.map((item, index) => (
-                            <a
+                            <Link
                                 key={index}
-                                href={item.href}
+                                smooth={true} duration={500}
+                                to={item.label}
                                 className="font-['Poppins',Helvetica] font-normal text-gray-600 text-base leading-4"
                             >
                                 {item.label}
-                            </a>
+                            </Link>
                         ))}
                     </nav>
 
